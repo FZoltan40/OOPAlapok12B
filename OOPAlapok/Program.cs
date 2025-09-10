@@ -11,25 +11,28 @@ namespace OOPAlapok
         private string nev;
         private int kor;
 
-        public Szemely(string Nev,int Kor)
+        public string Nev
         {
-            nev = Nev;
-            kor = Kor;
+            get { return nev; }
+            set { nev = value; }
         }
 
-        public string Kiir()
+        public int Kor
         {
-            return $"A tanulo neve: {nev} és {kor} éves.";
+            get { return kor; }
+            set { kor = value; }
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Szemely tanulo1 = new Szemely("Jani",55);
-            Console.WriteLine(tanulo1.Kiir());
-            Szemely tanulo2 = new Szemely("Ildi", 25);
-            Console.WriteLine(tanulo2.Kiir());
+            Szemely tanulo1 = new Szemely();
+            tanulo1.Nev = "Gábor";
+            Console.WriteLine(tanulo1.Nev);
+            tanulo1.Kor = 23;
+            Console.WriteLine(tanulo1.Kor);
+
         }
     }
 }
