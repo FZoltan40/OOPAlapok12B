@@ -85,15 +85,40 @@ namespace OOPAlapok
             tanulo1.Kor = 23;
 
             Console.WriteLine(tanulo1);
+            
             Console.WriteLine("-----------------------------------");
+            
             Bankszamla bankszamla1 = new Bankszamla();
             bankszamla1.Egyenleg = -5700;
             Console.WriteLine(bankszamla1.Egyenleg);
+            
             Console.WriteLine("-----------------------------------");
+            
             Hallgato hallgato1 = new Hallgato();
             hallgato1.Neptukod = "MHWLN97";
             Console.WriteLine(hallgato1.Neptukod);
 
+            Console.WriteLine("-----------------------------------");
+            
+            List<Hallgato> hallgatok = new List<Hallgato>();
+            for (int i = 0; i < 2; i++)
+            {
+
+                Hallgato hallgato = new Hallgato();
+                Console.Write($"Kérem a(z) {i+1} hallgato nevét:");
+                hallgato.Nev = Console.ReadLine();
+                Console.Write($"Kérem a(z) {i + 1} hallgato életkorát:");
+                hallgato.Kor = int.Parse( Console.ReadLine() );
+                Console.Write($"Kérem a(z) {i + 1} hallgato neptukódját:");
+                hallgato.Neptukod = Console.ReadLine();
+                hallgatok.Add( hallgato );
+                
+            }
+            Console.WriteLine("Hallagatók neve: ");
+            foreach (var item in hallgatok)
+            {
+                Console.WriteLine(item.Nev);
+            }
         }
     }
 }
