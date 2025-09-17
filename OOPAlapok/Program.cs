@@ -28,6 +28,32 @@ namespace OOPAlapok
             return $"A személy neve {nev} életkora {kor}";
         }
     }
+
+    public class Bankszamla
+    {
+        private int egyenleg;
+
+        public int Egyenleg
+        {
+            get { return egyenleg; }
+            set 
+            { 
+                if(value >= 0)
+                    egyenleg = value;
+                else
+                    Console.WriteLine("Az érték nem lehet negatív.");
+            }
+        }
+        public void Betesz()
+        {
+
+        }
+
+        public void Kivesz()
+        {
+
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
@@ -37,6 +63,10 @@ namespace OOPAlapok
             tanulo1.Kor = 23;
 
             Console.WriteLine(tanulo1);
+
+            Bankszamla bankszamla1 = new Bankszamla();
+            bankszamla1.Egyenleg = -5700;
+            Console.WriteLine(bankszamla1.Egyenleg);
 
         }
     }
