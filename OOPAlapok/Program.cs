@@ -8,7 +8,7 @@ namespace OOPAlapok
 {
     public class Szemely
     {
-        private string nev;
+        protected string nev;
         private int kor;
 
         public string Nev
@@ -58,6 +58,13 @@ namespace OOPAlapok
     public class Hallgato : Szemely
     {
         private int neptukod;
+
+
+        public void Kiir()
+        {
+            nev = string.Empty;
+        }
+        
     } 
     internal class Program
     {
